@@ -10,3 +10,7 @@
 | 7 | Facilitator password via env (random printed if unset); settings via env; relative URLs | Claude | Deployment readiness. |
 | 8 | Session state snapshotted to SQLite, events append-only long format | Claude | Restart-safe, R-friendly export. |
 | 9 | Owed-3-chips only warns, never blocks | Claude | Paper allows missed payment. |
+| 10 | `DEVELOPMENT_MODE` with `?dev_player=P1..P4`: seat stored per identity in browser storage; ignored unless the server reports dev mode | Researcher (need), Claude (design) | Lets one laptop hold four seats without touching production flow or role assignment. |
+| 11 | Key handlers use `addEventListener`, never `on*` properties; enforced by a test | Claude | Handler returning `false` had cancelled all typing. |
+| 12 | Session-code field limited to 5 characters; facilitator password unlimited; both tested | Researcher (requirement), Claude | Codes are 5 chars; passwords are arbitrary. |
+| 13 | Round 1 multiplayer accepted after manual QA; Round 2, outcome engine and AI messages deferred pending answers to docs/open_questions.md | Researcher | Milestone scope. |
