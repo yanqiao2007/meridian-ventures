@@ -14,7 +14,7 @@ async function login() {
   $("#login").style.display = "none"; $("#app").style.display = "block";
   conn = connect(`/ws/${code}?key=${encodeURIComponent(key)}`, (m) => { if (m.type === "state") { S = m.state; content = m.content; recv = performance.now(); render(); } });
 }
-$("#in").onclick = login; $("#pw").onkeydown = (e) => e.key === "Enter" && login();
+$("#in").onclick = login; $("#pw").addEventListener("keydown", (e) => { if (e.key === "Enter") login(); });
 if (key) login();
 
 async function download(name) {

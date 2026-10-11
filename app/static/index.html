@@ -15,5 +15,5 @@ const go = async () => {
   location.href = "/play?code=" + code;
 };
 document.getElementById("go").onclick = go;
-document.getElementById("code").onkeydown = (e) => e.key === "Enter" && go();
+document.getElementById("code").addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
 </script></body></html>
