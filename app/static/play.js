@@ -1,12 +1,14 @@
-import { $, h, connect, toast, fmt, KIND, ROW_TITLE, tokens } from "/static/common.js";
+import { $, h, connect, toast, fmt, KIND, ROW_TITLE, tokens, devIdentity, seatKey } from "/static/common.js";
 const code = (new URLSearchParams(location.search).get("code") || "").toUpperCase();
-const saved = JSON.parse(localStorage.getItem("meridian:" + code) || "null");
-if (!saved) location.href = "/";
+const dev = await devIdentity();
+const KEY = seatKey(code, dev);
+const saved = JSON.parse(localStorage.getItem(KEY) || "null");
+if (!saved) location.href = "/" + (dev ? "?dev_player=" + dev : "");
 let V = null, pageShown = false, receivedAt = 0;
 const conn = connect(`/ws/${code}?token=${encodeURIComponent(saved.token)}`, (m) => {
   if (m.type === "error") return toast(m.message);
   V = m; receivedAt = performance.now(); render();
-}, () => { localStorage.removeItem("meridian:" + code); $("#msg").replaceChildren(h("p", { class: "err" }, "Your seat is no longer active. Return to the join page."), h("a", { href: "/" }, "Join page")); });
+}, () => { localStorage.removeItem(KEY); $("#msg").replaceChildren(h("p", { class: "err" }, "Your seat is no longer active. Return to the join page."), h("a", { href: "/" }, "Join page")); });
 
 const phaseLabel = { lobby: "Waiting for facilitator", reading: "Quiet reading", open: "Board open", frozen: "Board frozen" };
 function remaining() { const s = V.state; return s.remaining == null ? null : s.remaining - (performance.now() - receivedAt) / 1000; }
@@ -15,7 +17,7 @@ function render() {
   const { state: s, content: c, you } = V;
   const open = s.phase === "open";
   $("#bar").replaceChildren(
-    h("strong", {}, "Meridian Ventures"), h("span", { class: "pill" }, `Round ${s.round}`), h("span", { class: "pill" }, you.role),
+    h("strong", {}, "Meridian Ventures"), h("span", { class: "pill" }, `Round ${s.round}`), h("span", { class: "pill" }, you.role), dev ? h("span", { class: "pill" }, "DEV " + dev) : null,
     h("span", { class: "pill" }, phaseLabel[s.phase]), h("span", { class: "grow" }),
     h("span", {}, "Bank: ", h("strong", {}, `${s.bank}`), " chips"), h("span", { class: "timer", id: "timer" }, ""));
   tick();

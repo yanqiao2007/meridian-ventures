@@ -2,17 +2,22 @@
 <title>Meridian Ventures</title><link rel="stylesheet" href="/static/style.css"></head><body>
 <div class="center stack"><h1>Meridian Ventures</h1><p class="mut">Investment committee exercise. Enter the session code your facilitator gave you.</p>
 <input type="text" id="code" placeholder="Session code" maxlength="5" autocomplete="off" style="text-transform:uppercase;width:100%">
+<div id="devbox" style="display:none" class="panel"><strong>Development mode</strong><p class="mut">Test identity (each keeps its own seat in this browser):</p><select id="dev"><option>P1</option><option>P2</option><option>P3</option><option>P4</option></select></div>
 <button class="primary" id="go">Join</button><p class="err" id="err"></p></div>
 <script type="module">
+import { devIdentity, devMode, seatKey } from "/static/common.js";
+const dev0 = await devIdentity();
+if (await devMode()) { document.getElementById("devbox").style.display = "block"; if (dev0) document.getElementById("dev").value = dev0; }
 const go = async () => {
   const code = document.getElementById("code").value.trim().toUpperCase(), err = document.getElementById("err");
   err.textContent = "";
-  const saved = JSON.parse(localStorage.getItem("meridian:" + code) || "null");
-  if (saved) { location.href = "/play?code=" + code; return; }
+  const dev = (await devMode()) ? document.getElementById("dev").value : null;
+  const key = seatKey(code, dev), q = "?code=" + code + (dev ? "&dev_player=" + dev : "");
+  if (localStorage.getItem(key)) { location.href = "/play" + q; return; }
   const r = await fetch(`/api/sessions/${code}/join`, { method: "POST" });
   if (!r.ok) { err.textContent = (await r.json()).detail || "Could not join."; return; }
-  localStorage.setItem("meridian:" + code, JSON.stringify(await r.json()));
-  location.href = "/play?code=" + code;
+  localStorage.setItem(key, JSON.stringify(await r.json()));
+  location.href = "/play" + q;
 };
 document.getElementById("go").onclick = go;
 document.getElementById("code").addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });

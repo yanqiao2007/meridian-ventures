@@ -29,3 +29,17 @@ export function connect(path, onMsg, onClose) {
   open();
   return { send: (m) => ws && ws.readyState === 1 && ws.send(JSON.stringify(m)), close: () => { closed = true; ws.close(); } };
 }
+
+// Where this tab remembers its seat. In development mode each ?dev_player=P1..P4 identity gets its own slot,
+// so four tabs of one browser can be four participants. Otherwise one seat per session code per device.
+export async function devIdentity() {
+  try {
+    const cfg = await (await fetch("/api/config")).json();
+    const id = new URLSearchParams(location.search).get("dev_player");
+    return cfg.development_mode && /^P[1-4]$/.test(id || "") ? id : null;
+  } catch { return null; }
+}
+export const seatKey = (code, dev) => "meridian:" + code + (dev ? ":" + dev : "");
+export async function devMode() {
+  try { return (await (await fetch("/api/config")).json()).development_mode; } catch { return false; }
+}

@@ -81,6 +81,10 @@ def create_app(settings: Settings = None) -> FastAPI:
     def favicon():
         return PlainTextResponse("", status_code=204)
 
+    @app.get("/api/config")
+    def public_config():
+        return {"development_mode": settings.development_mode}
+
     @app.get("/healthz")
     def healthz():
         return {"ok": True}

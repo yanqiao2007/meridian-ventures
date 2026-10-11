@@ -24,6 +24,7 @@ class Settings:
     reading_seconds: int = field(default_factory=lambda: _int("READING_SECONDS", 180))
     allowed_origins: list = field(default_factory=lambda: [o.strip() for o in os.environ.get("ALLOWED_ORIGINS", "").split(",") if o.strip()])
     facilitator_password: str = field(default_factory=lambda: os.environ.get("FACILITATOR_PASSWORD", ""))
+    development_mode: bool = field(default_factory=lambda: os.environ.get("DEVELOPMENT_MODE", "").strip().lower() in ("1", "true", "yes"))
     generated_password: bool = False
 
     def __post_init__(self):
