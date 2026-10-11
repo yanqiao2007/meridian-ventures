@@ -1,0 +1,367 @@
+{
+  "game": "Meridian Ventures, Round 1 (paper pilot v1.1, short)",
+  "currency": {
+    "chip_value_usd_millions": 1,
+    "starting_chips": 12,
+    "owed_next_round_chips": 3
+  },
+  "staff": {
+    "support": {
+      "count": 3,
+      "allowed_rows": [
+        "owned"
+      ]
+    },
+    "research": {
+      "count": 3,
+      "allowed_rows": [
+        "pipeline"
+      ]
+    },
+    "scout": {
+      "count": 3,
+      "allowed_rows": [
+        "scouting"
+      ]
+    },
+    "max_counters_per_company": 2
+  },
+  "rules": [
+    "Anyone can place, move or remove any chip or counter at any time. No chair; equal say.",
+    "Owned: fund with exactly the chips shown, or none. No partial funding, no overfunding.",
+    "Owned: support improves the odds the estimated profit is realized or exceeded.",
+    "Owned: a company with no chips AND no support this round leaves Meridian for good.",
+    "Pipeline: to invest this round, put exactly the top of the asking range, or none.",
+    "Pipeline: 1 research counter reveals exact price next round; 2 also reveal the profit band.",
+    "Pipeline: invest AND research the same company -> refund of (top of range - actual price) next round.",
+    "Scouting: no chips. 1 scout reveals a price range next round and moves the company to the pipeline; 2 also reveal a profit range.",
+    "Chips left in the bank carry over. Meridian owes 3 chips next round; fewer than 3 left = missed payment.",
+    "Round length 20 minutes: 3 minutes private reading, then open discussion; board freezes at 20:00; early finish only if all four agree."
+  ],
+  "mandate": "Meridian's partners will judge the committee on three things: the value its decisions create, its resilience when things go wrong, and the opportunities it sets up for next round.",
+  "profit_bands": [
+    {
+      "band": "Loss",
+      "range": "below $0"
+    },
+    {
+      "band": "Low",
+      "range": "up to $1M"
+    },
+    {
+      "band": "Medium",
+      "range": "$2–3M"
+    },
+    {
+      "band": "High",
+      "range": "$4M or more"
+    }
+  ],
+  "owned": [
+    {
+      "name": "Brightloom",
+      "line": "School scheduling software",
+      "needs_chips": 2,
+      "estimated_profit_musd": 2,
+      "summary": "Brightloom sells scheduling software to K–12 school districts. Sales grew quickly for two years and then flattened. The founder blames slow district budget cycles and wants the money to hire more salespeople before the spring buying season. Three sales hires left the company this spring. Customers who use the product renew at high rates, so the software itself is not the problem anyone is worried about."
+    },
+    {
+      "name": "Harbor & Pine",
+      "line": "Refillable cleaning products",
+      "needs_chips": 2,
+      "estimated_profit_musd": 2,
+      "summary": "Harbor & Pine makes refillable household cleaning products. It has been stocked by a national grocery chain since last year, and the chain has placed a large holiday order. The company wants the money for inventory so it can fill that order on time. Profit margins are thin but steady, and the team has hit every target it set this year."
+    },
+    {
+      "name": "Kestrel Diagnostics",
+      "line": "At-home blood-test kits",
+      "needs_chips": 3,
+      "estimated_profit_musd": 2,
+      "summary": "Kestrel sells at-home blood-test kits through pharmacies. Its current kit sells well and has strong reviews. Kestrel wants the money to launch a second kit that tests for more conditions, months ahead of its competitors. The founder says the new kit is ready to ship. Regulators have been paying closer attention to at-home testing this year."
+    }
+  ],
+  "pipeline": [
+    {
+      "name": "Nimbus Kitchens",
+      "line": "Online ordering for restaurants",
+      "asking_low_musd": 3,
+      "asking_high_musd": 5,
+      "summary": "Nimbus gives independent restaurants their own online ordering system, so they avoid the fees charged by delivery apps. It grew from 10 to 40 restaurant customers in a year. The founders say other investors are interested and they want to close quickly. The final price depends on how much of the company they agree to sell.",
+      "reveal_exact_price_musd": 3,
+      "reveal_profit_band": "Medium"
+    },
+    {
+      "name": "Solvanta",
+      "line": "Recycles electric-car batteries",
+      "asking_low_musd": 4,
+      "asking_high_musd": 8,
+      "summary": "Solvanta recovers lithium, nickel and cobalt from used electric-car batteries. Its pilot plant works, and a large carmaker is testing its recovered metals. If the process scales, the market is enormous. The unusually wide price range reflects open legal questions about the recycling process.",
+      "reveal_exact_price_musd": 5,
+      "reveal_profit_band": "High"
+    },
+    {
+      "name": "Wayfarer Care",
+      "line": "Books in-home help for older adults",
+      "asking_low_musd": 2,
+      "asking_high_musd": 4,
+      "summary": "Wayfarer lets families book vetted helpers for older relatives who live at home: errands, meals, rides and company. It is growing steadily in two states and families give it strong reviews. The founders are first-time entrepreneurs who are still building their management team.",
+      "reveal_exact_price_musd": 3,
+      "reveal_profit_band": "Medium"
+    },
+    {
+      "name": "Fieldnote",
+      "line": "Voice notes app for farmers",
+      "asking_low_musd": 4,
+      "asking_high_musd": 6,
+      "summary": "Fieldnote lets farmers record voice notes in the field and turns them into crop and equipment records. It has had heavy press coverage and a well-known founding team. It says it has 200 farm customers. Its asking price is at the top of what similar apps have raised.",
+      "reveal_exact_price_musd": 6,
+      "reveal_profit_band": "Loss"
+    }
+  ],
+  "scouting": [
+    {
+      "name": "Quillmark",
+      "line": "Invoicing for freelancers",
+      "summary": "Early but growing quickly by word of mouth among designers and writers. The founders are talking to several investors.",
+      "reveal_price_range_musd": [
+        1,
+        2
+      ],
+      "reveal_profit_range": "Medium to High"
+    },
+    {
+      "name": "Frostline",
+      "line": "Sensors for cold shipments",
+      "summary": "Temperature sensors for vaccine and food shipments. A large shipping company is running a trial. The founders built similar sensors at their last company.",
+      "reveal_price_range_musd": [
+        3,
+        5
+      ],
+      "reveal_profit_range": "Medium to High"
+    },
+    {
+      "name": "Sprigly",
+      "line": "Countertop herb kits",
+      "summary": "Countertop herb-growing kits that are popular on social media. Holiday sales spiked last year.",
+      "reveal_price_range_musd": [
+        1,
+        2
+      ],
+      "reveal_profit_range": "Loss to Low"
+    },
+    {
+      "name": "Tandem Tutors",
+      "line": "Peer tutoring for college students",
+      "summary": "Matches college students with peer tutors at four campuses. Cheap to run; growth is slow and steady.",
+      "reveal_price_range_musd": [
+        2,
+        3
+      ],
+      "reveal_profit_range": "Low to Medium"
+    },
+    {
+      "name": "Murmur",
+      "line": "App-based hearing tests",
+      "summary": "A phone app that screens for hearing loss. Accurate in one published study; needs clinic partners to grow.",
+      "reveal_price_range_musd": [
+        2,
+        4
+      ],
+      "reveal_profit_range": "Low to Medium"
+    }
+  ],
+  "engine_notes_from_private_pages": [
+    "Harbor & Pine: co-investor adds about $1M expected profit only if funded this round; low on cash in ~4 months.",
+    "Kestrel Diagnostics: launch may need regulatory approval (risk if funded); company survives without funding.",
+    "Brightloom: money without support is likely wasted; two support counters recommended.",
+    "Nimbus Kitchens: lost to another fund if not invested this round; actual price is low end ($3M).",
+    "Quillmark: lost if not scouted this round. Frostline can wait a round.",
+    "Wayfarer Care: if bought, needs one support counter every later round.",
+    "Fieldnote: actual price top of range ($6M); expected to lose money."
+  ],
+  "private_pages": {
+    "Sourcing": [
+      "You have run Meridian's scouting team for six years. Your three scouts spend their days at pitch events, on founder calls and in industry group chats. The scouting list is your territory: nobody else on the committee has met these five companies, and you have learned that excitement and quality are not the same thing.",
+      "Quillmark is the one you can't let slip. Its founders will choose their investors within a few weeks, so it needs a scout this round or Meridian won't get another look. Designers and writers recommend it to each other, and users stay. It's a small raise; your guess is $1–2M. Of everything on the list it may be the best value, with profit anywhere from respectable to excellent.",
+      "Frostline has the most upside. A large shipping company is already running a trial, and the founders built similar sensors at their last company. It won't be cheap, probably $3–5M. The good news is that the founders are months away from raising, so Frostline can wait a round if it has to.",
+      "Sprigly is cheap, around $1–2M, and popular online, but your scouts noticed its sales fell sharply after the holidays. One scout also learned that the founder's previous company shut down after a product recall. Your team's honest view is that Sprigly could lose money.",
+      "Tandem Tutors and Murmur sit in the middle. Tandem is steady and cheap to run, probably $2–3M; you'd be surprised if it lost money, and just as surprised if it made much. Murmur has one good published study but no clinic partners yet, probably $2–4M, and its profit depends on whether it signs them.",
+      "Outside your list, two things. Fieldnote, in the pipeline, is the company everyone is talking about: three national news stories this month, well-known founders, and three other funds asking about it. And two of Kestrel Diagnostics' competitors just won approval for kits like the one Kestrel wants to launch. That market is moving fast.",
+      "About your scouts: they can make three visits, only to scouting companies. One visit brings back a rough price range next round and moves the company into the pipeline. A second visit adds a rough profit range, but it's a visit you could have spent elsewhere."
+    ],
+    "Diligence": [
+      "You lead Meridian's research team: three analysts who check whether pipeline companies are what they say they are. They read contracts, call customers and go through legal filings. Founders rarely enjoy their visits, but your team has saved Meridian from more than one bad deal.",
+      "Solvanta is more encouraging than its price range suggests. The technology works; your team has seen the pilot plant. The open question is whether its process uses another company's patent. It probably does, but problems like that are usually solved with a license fee, not a shutdown. Once the legal picture is clear, you'd expect a price nearer $5M than $8M, and if it scales, its profits could be the biggest on the board. Solvanta isn't in a hurry to raise.",
+      "Fieldnote worries you. It says it has 200 farm customers. When your team checked last year, they could confirm about 30 paying ones; most of the rest looked like free trials that never turned into sales. Your guess is that Fieldnote will hold out for the top of its asking range and still lose money for whoever invests.",
+      "Nimbus Kitchens checks out. Your team already called its restaurant customers, and they are real and paying. It looks like a solid, healthy business, though not a blockbuster. On quality, it doesn't need more checking; its exact price is another matter.",
+      "Wayfarer Care's paperwork is clean: state licenses in order, background checks done properly, few complaints from families. Nothing in its records suggests either a big win or a big problem.",
+      "One finding concerns a company Meridian already owns. Kestrel Diagnostics' new kit may need government approval that Kestrel hasn't applied for. If it launches without approval and regulators step in, the damage could be serious. You raised this with the founder last quarter and never got a clear answer.",
+      "About your team: they can do three jobs, only on pipeline companies. One job pins down a company's exact price next round; a second adds a likely profit band. If the committee invests at the top of a range and your team checks the same company, Meridian gets the difference back once the real price is known. Scouting companies are off limits until a scout moves them into the pipeline."
+    ],
+    "Portfolio Management": [
+      "You lead Meridian's portfolio support team: three people who work hands-on with companies after Meridian invests. You are the one person on the committee who sees all three rows: you look after the companies Meridian owns, your team would onboard anything it buys, and you think about how new companies would fit.",
+      "Brightloom worries you most. The founder wants money to hire salespeople, but three sales hires quit this spring and nobody is managing the ones who stayed. Money alone would mostly go to replacing people who leave. In your experience, a company in this state needs two support counters to have a real chance; one might not be enough.",
+      "Harbor & Pine runs smoothly and needs cash, not advice; support there would be mostly wasted. Kestrel Diagnostics has one of the strongest teams Meridian has backed, and its founder has asked you personally to back the launch of her new kit.",
+      "Nimbus Kitchens' founders called you this week, not to pitch but to ask how quickly your team could start helping after a deal. They are close to signing with another fund and will decide this round. They also said a fund that moves fast would get the low end of their asking range. Committing now means putting the top of the range on the table; if research checks the price too, the difference comes back next round.",
+      "Wayfarer Care reminds you of two home-care companies your team helped in the past. Both raised around the middle of their asking ranges and made steady, middle-of-the-road profits. Wayfarer's founders are first-timers, so if Meridian invests, expect them to need one of your support counters every round after this one.",
+      "On the scouting list, Quillmark's invoicing tool solves a billing problem Brightloom and Harbor & Pine keep raising with you, and Frostline's founders barely needed your team's help at their last company.",
+      "About your team: support goes only on companies Meridian owns, up to two counters each. It improves the odds that a company hits or beats its estimate. It also keeps the relationship: an owned company that gets neither money nor support this round walks away for good."
+    ],
+    "Fund Management": [
+      "You lead Meridian's financial officers. You have no staff to send out this round, but you know the companies Meridian already owns from the inside: their bank balances, their spending and who else has money in them. Nobody else on the committee sees the whole bank the way you do.",
+      "Start with what Meridian already owes. Before this committee was formed, Meridian made a $3M commitment (3 chips) that comes due next round. If fewer than 3 chips are left in the bank when this round ends, Meridian will miss that payment, and the partners will notice. In practice, the committee has 9 chips to spend, not 12.",
+      "Harbor & Pine is the cleanest deal on the table. Another investor will put money in alongside Meridian, adding about $1M to its expected profit, but only if Meridian funds it this round. It also runs low on cash in about four months, so waiting is a real risk.",
+      "Kestrel Diagnostics has about two years of cash. It doesn't need Meridian's money to survive; its $3M request, the biggest among the owned companies, is only for launching the new kit. Saying no to the launch won't sink Kestrel. But an owned company that gets neither money nor a support counter walks away, so if Meridian skips the launch money and still wants Kestrel, someone has to give it support.",
+      "Brightloom has about a year of cash; the $2M it wants is for growth, not survival. You have watched companies like it spend new money on hiring and end up where they started.",
+      "Put together, the three owned companies ask for 7 chips. Fund all three, keep the 3 owed, and the committee has 2 chips left for everything else.",
+      "In the pipeline, one thing bothers you about Fieldnote: its earlier investors were offered more of the company this year, and every one of them declined.",
+      "On timing: if Meridian invests at the top of a pipeline company's range and research also checks it, the difference comes back next round. Until then those chips are tied up, and they don't count toward the 3 that must stay in the bank."
+    ]
+  },
+  "coded_facts": [
+    {
+      "role": "Sourcing",
+      "company": "Quillmark",
+      "code": "decisive",
+      "fact": "Scout this round or lose it; about $1–2M; best value"
+    },
+    {
+      "role": "Sourcing",
+      "company": "Frostline",
+      "code": "decisive",
+      "fact": "Most upside; about $3–5M; can wait a round"
+    },
+    {
+      "role": "Sourcing",
+      "company": "Sprigly",
+      "code": "decisive",
+      "fact": "About $1–2M; sales falling; founder's recall; could lose money"
+    },
+    {
+      "role": "Sourcing",
+      "company": "Tandem / Murmur",
+      "code": "supporting",
+      "fact": "Tandem $2–3M steady; Murmur $2–4M, needs clinic partners"
+    },
+    {
+      "role": "Sourcing",
+      "company": "Fieldnote",
+      "code": "misleading alone",
+      "fact": "Heavy press, famous founders, other funds interested"
+    },
+    {
+      "role": "Sourcing",
+      "company": "Kestrel",
+      "code": "misleading alone",
+      "fact": "Two competitors just won approval; market moving fast"
+    },
+    {
+      "role": "Diligence",
+      "company": "Solvanta",
+      "code": "decisive",
+      "fact": "Patent fixable; price nearer $5M; profit could be biggest; no rush"
+    },
+    {
+      "role": "Diligence",
+      "company": "Fieldnote",
+      "code": "decisive",
+      "fact": "About 30 of 200 customers confirmed; top price, likely loss"
+    },
+    {
+      "role": "Diligence",
+      "company": "Kestrel",
+      "code": "decisive",
+      "fact": "Launch may need approval; serious risk"
+    },
+    {
+      "role": "Diligence",
+      "company": "Nimbus Kitchens",
+      "code": "supporting",
+      "fact": "Real customers; solid, not a blockbuster"
+    },
+    {
+      "role": "Diligence",
+      "company": "Wayfarer Care",
+      "code": "supporting",
+      "fact": "Clean paperwork; no big win, no big problem"
+    },
+    {
+      "role": "Diligence",
+      "company": "Own unit",
+      "code": "supporting",
+      "fact": "Pipeline only; invest + research refunds the difference"
+    },
+    {
+      "role": "Portfolio Management",
+      "company": "Brightloom",
+      "code": "decisive",
+      "fact": "Money alone wasted; needs two support counters"
+    },
+    {
+      "role": "Portfolio Management",
+      "company": "Nimbus Kitchens",
+      "code": "decisive",
+      "fact": "Signing with another fund this round; low end of range for a fast fund"
+    },
+    {
+      "role": "Portfolio Management",
+      "company": "Wayfarer Care",
+      "code": "decisive",
+      "fact": "Mid price, middling profit; takes a support counter every later round"
+    },
+    {
+      "role": "Portfolio Management",
+      "company": "H&P / Kestrel",
+      "code": "misleading alone",
+      "fact": "H&P needs no support; Kestrel founder wants launch backed"
+    },
+    {
+      "role": "Portfolio Management",
+      "company": "Quillmark / Frostline",
+      "code": "supporting",
+      "fact": "Quillmark fits owned companies; Frostline founders need little help"
+    },
+    {
+      "role": "Portfolio Management",
+      "company": "Own unit",
+      "code": "supporting",
+      "fact": "Support keeps an unfunded owned company; neither = it leaves"
+    },
+    {
+      "role": "Fund Management",
+      "company": "Whole fund",
+      "code": "decisive",
+      "fact": "$3M (3 chips) owed next round; really 9 chips"
+    },
+    {
+      "role": "Fund Management",
+      "company": "Harbor & Pine",
+      "code": "decisive",
+      "fact": "Match adds about $1M only if funded now; low on cash in 4 months"
+    },
+    {
+      "role": "Fund Management",
+      "company": "Kestrel",
+      "code": "decisive",
+      "fact": "Two years of cash; skip launch money but support it to keep it"
+    },
+    {
+      "role": "Fund Management",
+      "company": "Brightloom",
+      "code": "supporting",
+      "fact": "A year of cash; money alone ends where it started"
+    },
+    {
+      "role": "Fund Management",
+      "company": "Owned total",
+      "code": "supporting",
+      "fact": "Funding all three owned leaves 2 chips for everything else"
+    },
+    {
+      "role": "Fund Management",
+      "company": "Fieldnote",
+      "code": "supporting",
+      "fact": "Earlier investors all declined to reinvest"
+    }
+  ]
+}

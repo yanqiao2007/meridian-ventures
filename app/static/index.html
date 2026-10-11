@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meridian Ventures</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<div class="center stack"><h1>Meridian Ventures</h1><p class="mut">Investment committee exercise. Enter the session code your facilitator gave you.</p>
+<input type="text" id="code" placeholder="Session code" maxlength="5" autocomplete="off" style="text-transform:uppercase;width:100%">
+<button class="primary" id="go">Join</button><p class="err" id="err"></p></div>
+<script type="module">
+const go = async () => {
+  const code = document.getElementById("code").value.trim().toUpperCase(), err = document.getElementById("err");
+  err.textContent = "";
+  const saved = JSON.parse(localStorage.getItem("meridian:" + code) || "null");
+  if (saved) { location.href = "/play?code=" + code; return; }
+  const r = await fetch(`/api/sessions/${code}/join`, { method: "POST" });
+  if (!r.ok) { err.textContent = (await r.json()).detail || "Could not join."; return; }
+  localStorage.setItem("meridian:" + code, JSON.stringify(await r.json()));
+  location.href = "/play?code=" + code;
+};
+document.getElementById("go").onclick = go;
+document.getElementById("code").onkeydown = (e) => e.key === "Enter" && go();
+</script></body></html>
