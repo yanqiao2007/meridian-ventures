@@ -112,3 +112,35 @@
   HTTPS.
 
 ✻ Brewed for 5m 35s · done 1:51 PM
+
+❯ /export docs/transcripts/session-01.txt Commit the exported session-01        
+transcript to the repository with a descriptive commit message.                 
+  ⎿  Conversation exported to:
+     /Users/amymo/Desktop/meridian-ventures/docs/transcripts/session-01.txt
+     Commit the exported session-01 transcript to the repository with a
+     descriptive commit message.
+
+❯ Commit the exported session-01 transcript to the repository with a            
+  descriptive commit message.                                                   
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ The export took your whole argument string as the filename, so the file ended
+  up with the commit instruction in its name. I'll rename it to session-01.txt
+  and commit it.
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I committed the transcript as docs/transcripts/session-01.txt, and the working
+  tree is clean.
+
+  /export used your whole argument string as the filename, so the file first
+  appeared with the commit instruction in its name. I renamed it before
+  committing. Next time, run /export docs/transcripts/session-01.txt on its own
+  and ask me to commit in a separate message.
+
+  The export is only 5 KB, which is small for a session this long, so it may
+  hold only part of the conversation. Open it to check. If it's incomplete,
+  re-run the export and I'll replace the file.
+
+✻ Baked for 8s · done 1:54 PM
